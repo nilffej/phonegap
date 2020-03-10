@@ -62,6 +62,13 @@ function updatePeriod(){
   if (currentperiod == 0) { period.innerHTML = "School Closed"; }
   else if (Number.isInteger(currentperiod)) { period.innerHTML = "Period " + currentperiod; }
   else { period.innerHTML = "Between " + Math.floor(currentperiod) + " and " + (Math.floor(currentperiod) + 1)}
+
+  temp = 0;
+  for (row in table.rows){
+    row.cells[0].style.color = periods[temp][2];
+    row.cells[0].style.color = periods[temp][2];
+  }
+  temp += 1;
 }
 
 function generateTable() {
@@ -72,8 +79,6 @@ function generateTable() {
     var cell2 = row.insertCell(1);
     cell1.innerHTML = "Period " + (temp + 1);
     cell2.innerHTML = formatTime(periods[temp][0]) + " - " + formatTime(periods[temp][1]);
-    cell1.style.color = periods[temp][2];
-    cell2.style.color = periods[temp][2];
     temp += 1;
   }
 }
@@ -90,4 +95,4 @@ function formatTime(time){
 }
 
 setInterval(updateTime, 1000);
-setInterval(updatePeriod, 10000);
+setInterval(updatePeriod, 1000);
