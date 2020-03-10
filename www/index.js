@@ -90,4 +90,4 @@ function formatTime(time){
 }
 
 setInterval(updateTime, 1000);
-setInterval(updatePeriod, 60000);
+setInterval(updatePeriod, 10000);
