@@ -69,7 +69,7 @@ function updatePeriod(){
     period.innerHTML = "Between " + Math.floor(currentperiod + 1) + " and " + (Math.floor(currentperiod) + 2)
     table.rows[Math.floor(currentperiod)].cells[0].style.color = "red";
     table.rows[Math.floor(currentperiod)].cells[1].style.color = "red";
-    table.rows[Math.floor(currentperiod) + 1)].cells[0].style.color = "red";
+    table.rows[Math.floor(currentperiod + 1)].cells[0].style.color = "red";
     table.rows[Math.floor(currentperiod + 1)].cells[1].style.color = "red";
   }
 }
