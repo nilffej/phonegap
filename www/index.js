@@ -23,21 +23,22 @@ function updateTime(){
 }
 
 var periods = [
-  [800,841,"black"],
-  [845,926,"black"],
-  [931,1015,"black"],
-  [1020,1101,"black"],
-  [1106,1147,"black"],
-  [1152,1233,"black"],
-  [1238,1319,"black"],
-  [1324,1405,"black"],
-  [1409,1450,"black"],
-  [1454,1535,"black"]
+  [800,841],
+  [845,926],
+  [931,1015],
+  [1020,1101],
+  [1106,1147],
+  [1152,1233],
+  [1238,1319],
+  [1324,1405],
+  [1409,1450],
+  [1454,1535]
 ]
 
 function updatePeriod(){
-  for (item in periods){
-    item[2] = "black";
+  for (var i = 0; i < table.rows.length; i++){
+    table.rows[i].cells[0].style.color = "black";
+    table.rows[i].cells[1].style.color = "black";
   }
   var today = new Date();
   currentperiod = null;
@@ -58,17 +59,19 @@ function updatePeriod(){
     }
     temp += 1;
   }
-  currentperiod += 1;
-  if (currentperiod == 0) { period.innerHTML = "School Closed"; }
-  else if (Number.isInteger(currentperiod)) { period.innerHTML = "Period " + currentperiod; }
-  else { period.innerHTML = "Between " + Math.floor(currentperiod) + " and " + (Math.floor(currentperiod) + 1)}
-
-  temp = 0;
-  for (row in table.rows){
-    row.cells[0].style.color = periods[temp][2];
-    row.cells[0].style.color = periods[temp][2];
+  if (currentperiod == -1) { period.innerHTML = "School Closed"; }
+  else if (Number.isInteger(currentperiod)) {
+    period.innerHTML = "Period " + (currentperiod + 1);
+    table.rows[currentperiod].cells[0].style.color = "red";
+    table.rows[currentperiod].cells[1].style.color = "red";
   }
-  temp += 1;
+  else {
+    period.innerHTML = "Between " + Math.floor(currentperiod + 1) + " and " + (Math.floor(currentperiod) + 2)
+    table.rows[Math.floor(currentperiod + 1)].cells[0].style.color = "red";
+    table.rows[Math.floor(currentperiod + 1)].cells[1].style.color = "red";
+    table.rows[Math.floor(currentperiod + 2)].cells[0].style.color = "red";
+    table.rows[Math.floor(currentperiod + 2)].cells[1].style.color = "red";
+  }
 }
 
 function generateTable() {
