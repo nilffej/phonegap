@@ -1,0 +1,17 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Stuyvesant Schedule",
+  "short_name": "Stuyvesant Schedule",
+  "version": "com.phonegap.helloworld",
+  "description": "Stuyvesant Schedule",
+  "author": "Jeff Lin",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
+  "start_url": "index.html"
+}
