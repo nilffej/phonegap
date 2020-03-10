@@ -6,6 +6,23 @@
   "config_munge": {
     "files": {}
   },
-  "installed_plugins": {},
-  "dependent_plugins": {}
+  "installed_plugins": {
+    "cordova-plugin-fullscreen": {
+      "PACKAGE_NAME": "com.phonegap.helloworld"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "file": "plugins/cordova-plugin-fullscreen/www/AndroidFullScreen.js",
+      "id": "cordova-plugin-fullscreen.AndroidFullScreen",
+      "pluginId": "cordova-plugin-fullscreen",
+      "clobbers": [
+        "AndroidFullScreen"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-plugin-fullscreen": "1.1.0"
+  }
 }
